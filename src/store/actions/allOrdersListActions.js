@@ -6,7 +6,7 @@ export const allOrdersList = () => {
         try{
             const {userLogInReducer:{userInfo:{token}}} = getState();
             dispatch(allOrdersListLoading(true))
-            const res = await axios.get('http://localhost:9999/api/orders', {
+            const res = await axios.get('https://wild-overshirt-eel.cyclic.app/api/orders', {
                 headers: {
                     authorization: `Bearer ${token}`,
                 },

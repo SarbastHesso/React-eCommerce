@@ -5,7 +5,7 @@ export const logIn = (email, password) => {
     return async dispatch => {
         try{
             dispatch(userLogInLoading(true))
-            const res = await axios.post('http://localhost:9999/api/users/login', {email, password})
+            const res = await axios.post('https://wild-overshirt-eel.cyclic.app/api/users/login', {email, password})
             dispatch(userLogIn(res.data))
             localStorage.setItem('userInfo', JSON.stringify(res.data))
             dispatch(userLogInLoading(false))

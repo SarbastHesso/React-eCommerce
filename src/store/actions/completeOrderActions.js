@@ -9,7 +9,7 @@ export const completeOrder = (order) => {
             const {userLogInReducer:{userInfo:{token}}} = getState();
 
             dispatch(completeOrderLoading(true))
-            const res = await axios.patch(`http://localhost:9999/api/orders/${order._id}/complete`, {},{
+            const res = await axios.patch(`https://wild-overshirt-eel.cyclic.app/api/orders/${order._id}/complete`, {},{
                 headers: {
                     authorization: `Bearer ${token}`,
                 }

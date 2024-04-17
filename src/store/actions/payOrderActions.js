@@ -9,7 +9,7 @@ export const payOrder = (order, payment) => {
             const {userLogInReducer:{userInfo:{token}}} = getState();
 
             dispatch(payOrderLoading(true))
-            const res = await axios.patch(`http://localhost:9999/api/orders/${order._id}`, {payment}, {
+            const res = await axios.patch(`https://wild-overshirt-eel.cyclic.app/api/orders/${order._id}`, {payment}, {
                 headers: {
                     authorization: `Bearer ${token}`,
                 }

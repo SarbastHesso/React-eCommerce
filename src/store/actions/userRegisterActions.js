@@ -5,7 +5,7 @@ export const register = (firstName, lastName, email, password, isAdmin) => {
     return async dispatch => {
         try{
             dispatch(userRegisterLoading(true))
-            const res = await axios.post('http://localhost:9999/api/users/register', {firstName, lastName, email, password, isAdmin})
+            const res = await axios.post('https://wild-overshirt-eel.cyclic.app/api/users/register', {firstName, lastName, email, password, isAdmin})
             dispatch(userRegister(res.data))
             dispatch({type: actiontypes().userLogIn.userLogIn, payload: res.data})
             localStorage.setItem('userInfo', JSON.stringify(res.data))

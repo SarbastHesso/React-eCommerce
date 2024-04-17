@@ -8,7 +8,7 @@ export const createOrder = (order) => {
             const {userLogInReducer:{userInfo:{token}}} = getState();
             
             dispatch(createOrderLoading(true))
-            const res = await axios.post('http://localhost:9999/api/orders', order, {
+            const res = await axios.post('https://wild-overshirt-eel.cyclic.app/api/orders', order, {
                 headers: {
                     authorization: `Bearer ${token}`,
                 },

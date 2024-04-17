@@ -5,7 +5,7 @@ export const getProdctsList = () => {
     return async dispatch => {
         try{
             dispatch(productsListLoading(true))
-            const res = await axios.get('http://localhost:9999/api/products')
+            const res = await axios.get('https://wild-overshirt-eel.cyclic.app/api/products')
             dispatch(setProducts(res.data))
             dispatch(productsListLoading(false))
         }
