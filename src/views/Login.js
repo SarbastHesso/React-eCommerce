@@ -28,31 +28,54 @@ const Login = () => {
     }, [userInfo, history])
     
     return (
-        <div className="container mt-5 vh-100">
-            {loading && <Loading/> }
-            {err && <Error err={err}/>}
-            <p className="my-5 text-center h4">Log In</p>  
-            <form className="border p-4 col-9 col-md-6 mx-auto" onSubmit={submitHandler} >
-                {/* // <!-- Email input --> */}
-                <div className="mb-4 input-border">
-                    <input type="email"  placeholder="Email address" className="form-control py-2" onChange={(e) => setEmail(e.target.value)}/>
-                </div>
+      <div className="container mt-5 vh-100">
+        {loading && <Loading />}
+        {err && <Error err={err} />}
+        <p className="my-5 text-center h4">Log In</p>
+        <form
+          className="border p-4 col-9 col-md-6 mx-auto"
+          onSubmit={submitHandler}
+        >
+          {/* // <!-- Email input --> */}
+          <div className="mb-4 input-border">
+            <input
+              type="email"
+              placeholder="Email address"
+              autoComplete="email"
+              className="form-control py-2"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
 
-                {/* <!-- Password input --> */}
-                <div className="mb-4 input-border">
-                    <input type="password" placeholder="Password" className="form-control py-2" onChange={(e) => setPassword(e.target.value)}/>
-                </div>
+          {/* <!-- Password input --> */}
+          <div className="mb-4 input-border">
+            <input
+              type="password"
+              placeholder="Password"
+              autoComplete="password"
+              className="form-control py-2"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
 
-                {/* <!-- Submit button --> */}
-                <button type="submit" className="btn btn-dark btn-block mb-4">Log in</button>
+          {/* <!-- Submit button --> */}
+          <button type="submit" className="btn btn-dark btn-block mb-4">
+            Log in
+          </button>
 
-                {/* <!-- Register buttons --> */}
-                <div className="text-center">
-                    <p>Not a member? <Link exact to='/register' className='text-warning'> Register</Link></p>
-                </div>
-            </form>
-        </div>
-    )
+          {/* <!-- Register buttons --> */}
+          <div className="text-center">
+            <p>
+              Not a member?{" "}
+              <Link to="/register" className="text-warning">
+                {" "}
+                Register
+              </Link>
+            </p>
+          </div>
+        </form>
+      </div>
+    );
 }
 
 export default Login

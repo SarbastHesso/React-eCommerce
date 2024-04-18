@@ -36,7 +36,7 @@ const AllOrders = () => {
     (
         <div className='container mt-5 '>
             <h3 className='text-center mb-4'>Orders</h3>
-            <table class="table align-middle">
+            <table className="table align-middle">
                 <thead className='bg-dark text-light'>
                     <tr>
                     <th scope="col">ID</th>
@@ -62,13 +62,13 @@ const AllOrders = () => {
                         }
                         
                         {
-                            order.isDone ? (<td className='text-success'><i class="far fa-check-circle text-success"></i> completed order</td>)
+                            order.isDone ? (<td className='text-success'><i className="far fa-check-circle text-success"></i> completed order</td>)
                             :order.isPaid ? (<td>Confirmed Order</td>)
                             :(<td>Pending Payment</td>)
                         }
                         <td className='pe-3'>
                             <Link exact onClick={() => {history.push(`/orders/${order._id}`)}}>
-                                <button type="button" class="btn btn-light btn-sm px-3">
+                                <button type="button" className="btn btn-light btn-sm px-3">
                                     Details
                                 </button>
                             </Link>
@@ -76,7 +76,7 @@ const AllOrders = () => {
                         <td className='pe-3'>
                             {
                                 !order.isDone ? (
-                                    <button type="button" class="btn btn-success btn-sm px-3" onClick={() => onClickHandler(order)}>
+                                    <button type="button" className="btn btn-success btn-sm px-3" onClick={() => onClickHandler(order)}>
                                         Change to Complete
                                     </button>
                                 )

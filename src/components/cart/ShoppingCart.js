@@ -78,7 +78,7 @@ const ShoppingCart = () => {
                     <tfoot>
                         {/* <!-- Total row --> */}
                         <tr>
-                        <td colspan="3"></td>
+                        <td colSpan="3"></td>
                         <td>
                             <h4 className="mt-2">
                             <strong>Total</strong>
@@ -89,7 +89,7 @@ const ShoppingCart = () => {
                             <strong>${cartTotalAmount}</strong>
                             </h4>
                         </td>
-                        <td colspan="3" className="text-right">
+                        <td colSpan="3" className="text-right">
                             <button type="button" className="btn btn-dark btn-rounded" onClick={checkOutHandler}>
                                 Check out<i className="fas fa-angle-right right"></i>
                             </button>
